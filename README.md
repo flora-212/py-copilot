@@ -1,7 +1,7 @@
 # 🤖 Py-Copilot
 
 ## Introduction
-**Py-Copilot** is a VSCode extension that enables Python programs to interact directly with GitHub Copilot.  
+**Py-Copilot** igit remote add origins a VSCode extension that enables Python programs to interact directly with GitHub Copilot.  
 It supports sending messages programmatically, attaching file context, and running structured prompts.  
 
 With these features, Py-Copilot lays the foundation for **automated evaluation of Copilot’s performance across different models** —  
@@ -77,7 +77,7 @@ pip install requests
 ### 1. Project Configuration Dialog
 For structured adaptation tasks:
 ```bash
-python project_client.py
+python client/project_client.py
 ```
 This opens a GUI where you can:
 - Specify technology and benchmark names
@@ -88,13 +88,13 @@ This opens a GUI where you can:
 ### 2. Simple Command-Line Client
 For quick queries:
 ```bash
-python simple_client.py "your message" [optional_path_for_additional_file]
+python client/simple_client.py "your message" [optional_path_for_additional_file]
 ```
 
 ### 3. Test Client (with requests library)
 If you have `requests` installed:
 ```bash
-python test_client.py
+python client/test_client.py
 ```
 
 **Note:** The VS Code extension must be running for Python clients to communicate with Copilot.
