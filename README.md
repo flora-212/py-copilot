@@ -1,7 +1,7 @@
 # 🤖 Py-Copilot
 
 ## Introduction
-**Py-Copilot** igit remote add origins a VSCode extension that enables Python programs to interact directly with GitHub Copilot.  
+**Py-Copilot** is a VSCode extension that enables Python programs to interact directly with GitHub Copilot.  
 It supports sending messages programmatically, attaching file context, and running structured prompts.  
 
 With these features, Py-Copilot lays the foundation for **automated evaluation of Copilot’s performance across different models** —  
