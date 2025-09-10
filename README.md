@@ -5,7 +5,7 @@
 It supports sending messages programmatically, attaching file context, and running structured prompts.  
 
 With these features, Py-Copilot lays the foundation for **automated evaluation of Copilot’s performance across different models** —  
-especially in scenarios where models are adapting other code completion methods to new datasets and contexts.
+this project provides an example where models are adapting other code completion methods to ne
 
 ---
 
@@ -40,7 +40,7 @@ Before installing this project, make sure you have:
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/your-username/py-copilot.git
+git clone https://github.com/flora-212/py-copilot.git
 cd py-copilot
 ```
 
