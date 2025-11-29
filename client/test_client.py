@@ -73,7 +73,12 @@ def send_message_to_copilot(message, port=12345, file_path=None):
 def interactive_mode():
     """Interactive mode - continuously receive user input and send to Copilot"""
     print("🚀 py-copilot Interactive mode started")
-    print("Enter messages to send to Copilot, type 'quit' or 'exit' to exit")
+    print("💡 Instructions:")
+    print("  - Type your message to send to Copilot")
+    print("  - To attach a file, use format: message | file_path")
+    print("    Example: 'Explain this code | src/main.py'")
+    print("  - Type 'quit', 'exit', or 'q' to exit")
+    print("  - Press Ctrl+C to force exit")
     print("-" * 50)
     
     while True:
@@ -87,8 +92,15 @@ def interactive_mode():
             if not user_input:
                 print("⚠️  Message cannot be empty")
                 continue
-                
-            send_message_to_copilot(user_input)
+            
+            # Check if user wants to attach a file
+            if ' | ' in user_input:
+                message, file_path = user_input.split(' | ', 1)
+                message = message.strip()
+                file_path = file_path.strip()
+                send_message_to_copilot(message, file_path=file_path)
+            else:
+                send_message_to_copilot(user_input)
             
         except KeyboardInterrupt:
             print("\n👋 User interrupted, exiting program")
@@ -127,25 +139,15 @@ if __name__ == "__main__":
     print("=" * 60)
     
     print("\nSelect run mode:")
-    print("1. Interactive mode (recommended)")
-    print("2. Basic functionality test")
-    print("3. Send single message")
+    print("1. Interactive mode (send messages continuously)")
+    print("2. Basic functionality test (automated test)")
     
     try:
-        choice = input("\nPlease choose (1-3): ").strip()
+        choice = input("\nPlease choose (1-2) or press Enter for interactive mode: ").strip()
         
-        if choice == "1":
-            interactive_mode()
-        elif choice == "2":
+        if choice == "2":
             test_basic_functionality()
-        elif choice == "3":
-            message = input("Please enter the message to send: ").strip()
-            if message:
-                send_message_to_copilot(message)
-            else:
-                print("❌ Message cannot be empty")
-        else:
-            print("❌ Invalid choice, defaulting to interactive mode")
+        else:  # Default to interactive mode for choice "1" or empty input
             interactive_mode()
             
     except KeyboardInterrupt:

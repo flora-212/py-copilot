@@ -1,5 +1,4 @@
 # 🤖 Py-Copilot
-
 ## Introduction
 **Py-Copilot** is a VSCode extension that enables Python programs to interact directly with GitHub Copilot.  
 It supports sending messages programmatically, attaching file context, and running structured prompts.  
@@ -52,6 +51,8 @@ npm install
 3. **Build the extension:**
 ```bash
 npm run compile
+# Or use watch mode for development:
+# npm run watch
 ```
 
 4. **Install in VS Code:**
@@ -74,6 +75,15 @@ pip install requests
 
 ## 📖 Usage
 
+### Prerequisites for Usage
+Before using any Python clients, make sure:
+1. **Open a separate VS Code window** (not the one running this project) 
+2. **Install and activate the py-copilot extension** in that VS Code window by pressing `F5` in this project
+3. **Open GitHub Copilot Chat** in the separate VS Code window (`Ctrl+Shift+P` → "GitHub Copilot: Open Chat")
+4. **Keep the separate VS Code window with Copilot Chat open** while running Python clients from your terminal
+
+**Important:** The Python clients communicate with the py-copilot extension running in a separate VS Code window, not the development window where you're editing this project.
+
 ### 1. Project Configuration Dialog
 For structured adaptation tasks:
 ```bash
@@ -85,16 +95,17 @@ This opens a GUI where you can:
 - Add context from papers or documentation
 - Preview the generated message before sending
 
-### 2. Simple Command-Line Client
+### 2. Test Client (with requests library)
+If you have `requests` installed:
+```bash
+python client/test_client.py
+```
+
+### 3. Simple Command-Line Client
 For quick queries:
 ```bash
 python client/simple_client.py "your message" [optional_path_for_additional_file]
 ```
 
-### 3. Test Client (with requests library)
-If you have `requests` installed:
-```bash
-python client/test_client.py
-```
 
 **Note:** The VS Code extension must be running for Python clients to communicate with Copilot.
