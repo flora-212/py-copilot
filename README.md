@@ -101,6 +101,22 @@ If you have `requests` installed:
 python client/test_client.py
 ```
 
+This client offers two modes:
+
+**Option 1: Interactive Mode (Default)**
+- Continuously send messages to Copilot
+- Type your questions and get responses
+- Attach files using format: `message | file_path`
+  - Example: `Explain this code | src/main.py`
+- Exit by typing `quit`, `exit`, or `q`
+- Press `Ctrl+C` to force exit
+
+**Option 2: Basic Functionality Test**
+- Runs automated tests with predefined messages
+- Tests basic communication with the extension
+- Useful for verifying the setup is working correctly
+- Includes file attachment testing
+
 ### 3. Simple Command-Line Client
 For quick queries:
 ```bash

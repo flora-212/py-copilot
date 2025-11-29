@@ -116,7 +116,7 @@ def test_basic_functionality():
         "Hello from Python! ",
         "Please help me explain this Python code: i += 1 ",
         "What does this error mean: IndexError: list index out of range",
-        {"text": "Summarize the function of this file", "file": "test_code.py"}
+        {"text": "Summarize the function of this file", "file": "./client/test_code.py"}
     ]
     
     for i, message in enumerate(test_messages, 1):
